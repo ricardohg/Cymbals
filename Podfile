@@ -5,7 +5,7 @@ use_frameworks!
 
 target 'Cymbals' do
 pod 'Alamofire'
-pod 'AlamofireObjectMapper'
+pod 'SwiftyJSON'
 end
 
 target 'CymbalsTests' do
