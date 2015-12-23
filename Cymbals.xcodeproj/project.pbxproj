@@ -14,6 +14,7 @@
 		8CBC4D391C20C94A00E17510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CBC4D371C20C94A00E17510 /* LaunchScreen.storyboard */; };
 		8CBC4D441C20C94A00E17510 /* CymbalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC4D431C20C94A00E17510 /* CymbalsTests.swift */; };
 		8CBC4D4F1C20C94A00E17510 /* CymbalsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC4D4E1C20C94A00E17510 /* CymbalsUITests.swift */; };
+		CA9EA82E4D9BF4C75AA6AD91 /* Pods_Cymbals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97F0DC456D6745C63CA4C2B9 /* Pods_Cymbals.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		8CBC4D4A1C20C94A00E17510 /* CymbalsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CymbalsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBC4D4E1C20C94A00E17510 /* CymbalsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CymbalsUITests.swift; sourceTree = "<group>"; };
 		8CBC4D501C20C94A00E17510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97F0DC456D6745C63CA4C2B9 /* Pods_Cymbals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cymbals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99FCCDEBE8FE416D8AB5F8CE /* Pods-Cymbals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cymbals.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cymbals/Pods-Cymbals.release.xcconfig"; sourceTree = "<group>"; };
+		CAD61A729D4FE59AE287A17E /* Pods-Cymbals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cymbals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cymbals/Pods-Cymbals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA9EA82E4D9BF4C75AA6AD91 /* Pods_Cymbals.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				8CBC4D421C20C94A00E17510 /* CymbalsTests */,
 				8CBC4D4D1C20C94A00E17510 /* CymbalsUITests */,
 				8CBC4D2C1C20C94A00E17510 /* Products */,
+				DC90B8951D590D3D05995CE4 /* Pods */,
+				D745A22667E4054A5363D1AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = CymbalsUITests;
 			sourceTree = "<group>";
 		};
+		D745A22667E4054A5363D1AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97F0DC456D6745C63CA4C2B9 /* Pods_Cymbals.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC90B8951D590D3D05995CE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAD61A729D4FE59AE287A17E /* Pods-Cymbals.debug.xcconfig */,
+				99FCCDEBE8FE416D8AB5F8CE /* Pods-Cymbals.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CBC4D531C20C94A00E17510 /* Build configuration list for PBXNativeTarget "Cymbals" */;
 			buildPhases = (
+				8888E30EA1EBC7BC5517FDCA /* Check Pods Manifest.lock */,
 				8CBC4D271C20C94A00E17510 /* Sources */,
 				8CBC4D281C20C94A00E17510 /* Frameworks */,
 				8CBC4D291C20C94A00E17510 /* Resources */,
+				CEBF0790C30B4D4EB746B8CD /* Embed Pods Frameworks */,
+				C5D465F681702866C9B49261 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,6 +277,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8888E30EA1EBC7BC5517FDCA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C5D465F681702866C9B49261 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cymbals/Pods-Cymbals-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEBF0790C30B4D4EB746B8CD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cymbals/Pods-Cymbals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8CBC4D271C20C94A00E17510 /* Sources */ = {
@@ -395,6 +470,7 @@
 		};
 		8CBC4D541C20C94A00E17510 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAD61A729D4FE59AE287A17E /* Pods-Cymbals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cymbals/Info.plist;
@@ -406,6 +482,7 @@
 		};
 		8CBC4D551C20C94A00E17510 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99FCCDEBE8FE416D8AB5F8CE /* Pods-Cymbals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cymbals/Info.plist;
@@ -482,6 +559,7 @@
 				8CBC4D551C20C94A00E17510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CBC4D561C20C94A00E17510 /* Build configuration list for PBXNativeTarget "CymbalsTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +568,7 @@
 				8CBC4D581C20C94A00E17510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8CBC4D591C20C94A00E17510 /* Build configuration list for PBXNativeTarget "CymbalsUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +577,7 @@
 				8CBC4D5B1C20C94A00E17510 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
